@@ -58,7 +58,7 @@
             </mdg_giftregistry_read>
         </resources>
     </global>
-    <!--<frontend>
+    <frontend>
         <layout>
             <updates>
                 <mdg_giftregistry module="mdg_giftregistry">
@@ -75,6 +75,6 @@
                 </args>
             </mdg_giftregistry>
         </routers>
-    </frontend>-->
+    </frontend>
 </config>
 

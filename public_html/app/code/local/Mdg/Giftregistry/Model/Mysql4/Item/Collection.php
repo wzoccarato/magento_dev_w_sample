@@ -10,7 +10,7 @@ class Mdg_Giftregistry_Model_Mysql4_Item_Collection extends Mage_Core_Model_Mysq
 {
     public function _construct()
     {
-        $this->Init('mdg_giftregistry/item');
+        $this->_init('mdg_giftregistry/item');
         parent::_construct();
     }
 }

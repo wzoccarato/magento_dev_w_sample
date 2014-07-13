@@ -10,7 +10,7 @@ class Mdg_Giftregistry_Model_Mysql4_Entity_Collection extends Mage_Core_Model_My
 {
     public function _construct()
     {
-        $this->Init('mdg_giftregistry/entity');
+        $this->_init('mdg_giftregistry/entity');
         parent::_construct();
     }
 }
