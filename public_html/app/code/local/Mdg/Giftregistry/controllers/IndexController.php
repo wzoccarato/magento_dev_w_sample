@@ -17,6 +17,7 @@ class Mdg_Giftregistry_IndexController extends Mage_Core_Controller_Front_Action
         }
     }
 
+    // questa deve soltanto visualizzare il layout
     public function indexAction()
     {
         $this->loadLayout();
@@ -24,6 +25,7 @@ class Mdg_Giftregistry_IndexController extends Mage_Core_Controller_Front_Action
         return $this;
     }
 
+    // questa deve gestire l'input dell'utente
     public function deleteAction()
     {
         try {
@@ -46,6 +48,7 @@ class Mdg_Giftregistry_IndexController extends Mage_Core_Controller_Front_Action
         }
     }
 
+    // questa deve soltanto visualizzare il layout
     public function newAction()
     {
         $this->loadLayout();
@@ -53,6 +56,7 @@ class Mdg_Giftregistry_IndexController extends Mage_Core_Controller_Front_Action
         return $this;
     }
 
+    // questa deve soltanto visualizzare il layout
     public function editAction()
     {
         $this->loadLayout();
@@ -60,11 +64,11 @@ class Mdg_Giftregistry_IndexController extends Mage_Core_Controller_Front_Action
         return $this;
     }
 
+    // questa deve gestire l'input dell'utente
     public function newPostAction()
     {
         try {
             $data = $this->getRequest()->getParams();
-
             $registry = Mage::getModel('mdg_giftregistry/entity');
             $customer = Mage::getSingleton('customer/session')->getCustomer();
 
@@ -83,6 +87,7 @@ class Mdg_Giftregistry_IndexController extends Mage_Core_Controller_Front_Action
         $this->_redirect('*/*/');
     }
 
+    // questa deve gestire l'input dell'utente
     public function editPostAction()
     {
         try {

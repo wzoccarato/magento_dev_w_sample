@@ -1,4 +1,12 @@
-<?php $helper = Mage::helper('mdg_giftregistry'); ?>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: walter
+ * Date: 28/07/14
+ * Time: 23.07
+ */
+
+$helper = Mage::helper('mdg_giftregistry'); ?>
 <form action="<?php echo $this->getUrl('giftregistry/index/newPost/') ?>" method="post" id="form-validate">
     <fieldset>
         <?php echo $this->getBlockHtml('formkey')?>
@@ -7,9 +15,9 @@
                 <label for="type_id"><?php echo $this->__('Event type') ?></label>
                 <select name="type_id" id="type_id">
                     <?php foreach($helper->getEventTypes() as $type): ?>
-                    <option id="<?php echo $type->getCode(); ?>" value="<?php echo $type->getTypeId(); ?>">
-                        <?php echo $type->getName(); ?>
-                    </option>
+                        <option id="<?php echo $type->getCode(); ?>" value="<?php echo $type->getTypeId(); ?>">
+                            <?php echo $type->getName(); ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
             </li>
