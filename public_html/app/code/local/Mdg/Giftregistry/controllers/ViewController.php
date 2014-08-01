@@ -25,6 +25,6 @@ class Mdg_Giftregistry_ViewController extends Mage_Core_Controller_Front_Action
                 return $this;
             }
         }
-        $this->_redirect('*/*/');
+        return $this->_redirect('*/*/');
     }
 }
