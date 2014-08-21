@@ -39,6 +39,9 @@
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view">
     <div class="product-essential">
+        <!--- Blocco Add to registry INIZIO -->
+        <?php echo $this->getChildHtml('registry_add') ?>
+        <!--- Blocco Add to registry FINE -->
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <?php echo $this->getBlockHtml('formkey') ?>
         <div class="no-display">
