@@ -6,7 +6,7 @@
  * Time: 22.36
  */
 
-class Mdg_Giftregistry_Block_list extends Mage_Core_Block_Template
+class Mdg_Giftregistry_Block_List extends Mage_Core_Block_Template
 {
     public function getCustomerRegistries()
     {
