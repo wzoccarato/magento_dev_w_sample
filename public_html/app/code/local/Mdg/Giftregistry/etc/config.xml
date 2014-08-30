@@ -87,5 +87,14 @@
             </adminhtml>
         </routers>
     </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <mdg_giftregistry module="mdg_giftregistry">
+                    <file>giftregistry.xml</file>
+                </mdg_giftregistry>
+            </updates>
+        </layout>
+    </adminhtml>
 </config>
 

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_customer_edit>
+        <reference name="left">
+            <reference name="customer_edit_tabs">
+                <block type="mdg_giftregistry/adminhtml_customer_edit_tab_giftregistry"
+                       name="tab_giftregistry_main"
+                       template="mdg/giftregistry/customer/main.phtml">
+                    <block type="mdg_giftregistry/adminhtml_customer_edit_tab_giftregistry_list"
+                           name="tab_giftregistry_list"
+                           as="giftregistry_list" />
+                </block>
+                <action method="addTab">
+                    <name>mdg_giftregistry</name>
+                    <block>mdg_giftregistry/adminhtml_customer_edit_tab_giftregistry</block>
+                </action>
+            </reference>
+        </reference>
+    </adminhtml_customer_edit>
+    <adminhtml_registries_index>
+        <reference name="content">
+            <block type="mdg_giftregistry/adminhtml_registries" name="registries" />
+        </reference>
+    </adminhtml_registries_index>
+    <adminhtml_registries_edit>
+        <reference name="content">
+            <block type="mdg_giftregistry/adminhtml_registries_edit" name="new_registry_tabs" />
+        </reference>
+    </adminhtml_registries_edit>
+    <adminhtml_registries_new>
+        <reference name="content">
+            <block type="mdg_giftregistry/adminhtml_registries_edit" name="new_registry_tabs" />
+        </reference>
+    </adminhtml_registries_new>
+</layout>

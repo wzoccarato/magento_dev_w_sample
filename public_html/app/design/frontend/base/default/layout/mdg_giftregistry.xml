@@ -46,8 +46,7 @@
     <catalog_product_view translate="label">
         <reference name="content">
             <reference name="product.info">
-                <block type="mdg_giftregistry/add" name="registry.add" as="registry_add" template="mdg/add_to_registry.phtml" />
-                <!--<block type="mdg_giftregistry/add" name="registry.add" as="registry_add" template="mdg/list.phtml" />-->
+                <block type="mdg_giftregistry/add" name="registry.add" as="registry_add" template="mdg/add_to_registry.phtml"/>
             </reference>
         </reference>
     </catalog_product_view>
