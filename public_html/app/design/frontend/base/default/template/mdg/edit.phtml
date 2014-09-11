@@ -1,27 +1,59 @@
 <?php
 $helper = Mage::helper('mdg_giftregistry');
+$registryId = $this->getRequest()->getParam('registry_id');
+if($registryId){
+    $entity = Mage::getModel('mdg_giftregistry/entity');
+    $entity->load($registryId);
+    if($entity->load($registryId))
+    {
+        Mage::getSingleton('customer/session')->setData(array('loaded_registry' => $entity));
+        //Mage::register('loaded_registry', $entity);
+    }
+}
+// questa e' solo per esempio, sotto si usa direttamente $entity
 $loadedRegistry = Mage::getSingleton('customer/session')->getLoadedRegistry();
 ?>
-<?php if ($loadedRegistry): ?>
+<?php /*if ($loadedRegistry): */?>
+<?php if ($entity): ?>
     <form action="<?php echo $this->getUrl('giftregistry/index/editPost/') ?>" method="post" id="form-validate">
         <fieldset>
             <?php echo $this->getBlockHtml('formkey') ?>
-            <input type="hidden" id="type_id" value="<?php echo $loadedRegistry->getTypeId(); ?>"/>
+            <!--<input type="hidden" id="type_id" value="<?php /*echo $loadedRegistry->getTypeId(); */?>"/>-->
             <ul class="form-list">
+                <li class="field">
+                    <label class="giftreg" for="entity_id"></label>
+                    <input type="hidden" name="entity_id" id="entity_id" value="<?php echo $entity->getEntityId(); ?>"/>
+                </li>
+                <li class="field">
+                    <label class="giftreg" for="customer_id"></label>
+                    <input type="hidden" name="customer_id" id="customer_id" value="<?php echo $entity->getCustomerId(); ?>"/>
+                </li>
+                <li class="field">
+                    <label class="giftreg" for="type_id"></label>
+                    <input type="hidden" name="type_id" id="type_id" value="<?php echo $entity->getTypeId(); ?>"/>
+                </li>
+                <li class="field">
+                    <label class="giftreg" for="website_id"></label>
+                    <input type="hidden" name="website_id" id="website_id" value="<?php echo $entity->getWebsiteId(); ?>"/>
+                </li>
                 <li class="field">
                     <label class="giftreg" for="event_name"><?php echo $this->__('Event Name') ?></label>
                     <input type="text" name="event_name" id="event_name"
-                           value="<?php echo $loadedRegistry->getEventName(); ?>" title="Event Name"/>
+                           value="<?php echo $entity->getEventName(); ?>" title="Event Name"/>
+                </li>
+                <li class="field">
+                    <label class="giftreg" for="event_date"></label>
+                    <input type="hidden" name="event_date" id="event_date" value="<?php echo $entity->getEventDate(); ?>"/>
                 </li>
                 <li class="field">
                     <label class="giftreg" for="event_location"><?php echo $this->__('Event Location') ?></label>
                     <input type="text" name="event_location" id="event_location"
-                           value="<?php echo $loadedRegistry->getEventLocation(); ?>" title="Event Location"/>
+                           value="<?php echo $entity->getEventLocation(); ?>" title="Event Location"/>
                 </li>
                 <li class="field">
                     <label class="giftreg" for="event_country"><?php echo $this->__('Event Country') ?></label>
                     <input type="text" name="event_country" id="event_country"
-                           value="<?php echo $loadedRegistry->getEventCountry(); ?>" title="Event Country"/>
+                           value="<?php echo $entity->getEventCountry(); ?>" title="Event Country"/>
                 </li>
             </ul>
             <div class="buttons-set">

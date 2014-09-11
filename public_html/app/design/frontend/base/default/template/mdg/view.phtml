@@ -14,3 +14,6 @@ $registry = Mage::registry('loaded_registry'); ?>
 <?php else: ?>
     <h3>There was an error, the requested registry does not exist.</h3>
 <?php endif; ?>
+<a href="<?php echo $this->getUrl('giftregistry/index/index') ?>">
+    <?php echo $this->__('Back to Index page') ?>
+</a>

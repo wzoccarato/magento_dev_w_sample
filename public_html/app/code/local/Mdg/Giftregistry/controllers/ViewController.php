@@ -16,6 +16,12 @@ class Mdg_Giftregistry_ViewController extends Mage_Core_Controller_Front_Action
             if($entity->load($registryId))
             {
                 Mage::register('loaded_registry', $entity);
+                //++ verifica -- da togliere
+                $verifica = Mage::registry('loaded_registry');
+                $loadedRegistry = Mage::getSingleton('customer/session')->getLoadedRegistry();
+                Mage::getSingleton('customer/session')->setData(array('loaded_registry' => $entity));
+                $loadedRegistry = Mage::getSingleton('customer/session')->getLoadedRegistry();
+                //-- verifica -- da togliere
                 $this->loadLayout();
                 $this->_initLayoutMessages('customer/session');
                 $this->renderLayout();
